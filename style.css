@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700&display=swap');
+/* font-family: 'Kanit', sans-serif; */
+
+:root {
+    --font: 'Kanit', sans-serif;
+    --backdrop: #333333;
+    --background: #F1E3F3;
+    --foreground: #C2BBF0;
+    --accent: #8FB8ED;
+}
+
+body {
+    background: var(--backdrop);
+    font-family:var(--font);
+}
+
+.main-container {
+    position: absolute;
+    width: 360px;
+    height: 640px;
+    background: var(--background);
+    border-radius: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    text-align: center;
+}
+
+.item-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.item-label {
+    position: absolute;
+    font-size: 24px;
+    left: 15px;
+    margin: 0;
+}
+
+.price-wrapper {
+    position: relative;
+    width: 185px;
+    height: 45px;
+    border-radius: 10px;
+    font-family: 'Kanit', sans-serif;
+    font-weight:  600;
+    font-size: 24px;
+    border: none;
+    outline: none;
+    margin-bottom: 15px;
+    left: calc(50% - 209px/2 + 60.5px);
+    text-align: right;
+    padding-right: 15px;
+    background: var(--foreground);
+}
+
+.item-container::before {
+    z-index: 1;
+    content: "$";
+    position: absolute;
+    left: 140px;
+    padding-top: 5px;
+    font-size: 24px;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600;
+}
+
+::placeholder {
+    font-family: 'Kanit', sans-serif;
+    font-weight:  600;
+    color: black;
+    text-align: right;
+    font-size: 24px;
+}
