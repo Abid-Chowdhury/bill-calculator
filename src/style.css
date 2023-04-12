@@ -107,41 +107,16 @@ h1 {
     margin: 0;
 }
 
-#active {
+.tip-percentage-container .active {
     background-color: var(--accent);
 }
 
-#unactive {
+.tip-percentage-container .unactive {
     background-color: var(--background);
 }
 
-.actions-container {
-    position: relative;
-    width: 330px;
-    left: 15px;
-}
-
-.actions-container button {
-    height: 65px;
-    width: 150px;
-    border-radius: 10px;
-    border: none;
-    font-family: var(--font);
-    font-weight: 600;
-    font-size: 25px;
-    background: var(--background);
-}
-
-#submit {
-    position: relative;
-    left: 25px;
-}
-
-.actions-container button p {
-    margin: 0;
-}
-
 .summary-container {
+    display: none;
     position: relative;
     width: 330px;
     height: 217px;
@@ -221,4 +196,31 @@ h1 {
     line-height: 19px;
     display: flex;
     align-items: center;
+}
+
+.actions-container {
+    position: absolute;
+    width: 330px;
+    left: 15px;
+    top: 560px;
+}
+
+.actions-container button {
+    height: 65px;
+    width: 150px;
+    border-radius: 10px;
+    border: none;
+    font-family: var(--font);
+    font-weight: 600;
+    font-size: 25px;
+    background: var(--background);
+}
+
+#submit {
+    position: relative;
+    left: 25px;
+}
+
+.actions-container button p {
+    margin: 0;
 }
