@@ -119,7 +119,6 @@ h1 {
     position: relative;
     width: 330px;
     left: 15px;
-    top: 220px;
 }
 
 .actions-container button {
@@ -140,4 +139,86 @@ h1 {
 
 .actions-container button p {
     margin: 0;
+}
+
+.summary-container {
+    position: relative;
+    width: 330px;
+    height: 217px;
+    left: 15px;
+}
+
+.summary-label {
+    position: relative;
+    width: 96px;
+    height: 22px;
+    left: 117px;
+    top: 8.91px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.price-container {
+    display: flex;
+    flex-direction: row;
+    height: 25px;
+}
+
+.item-name-label {
+    position: relative;
+    width: 83.27px;
+    left: 75.36px;
+    margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+}
+
+.item-price-label {
+    position: relative;
+    width: 83.27px;
+    left: 130px;
+    margin: 0px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+}
+
+.total-price-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.total-name-label {
+    position: relative;
+    width: 83.27px;
+    height: 36.93px;
+    left: 75.36px;
+    margin: 0px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+}
+
+.total-price-label {
+    position: relative;
+    width: 83.27px;
+    height: 36.93px;
+    left: 130px;
+    margin: 0px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
 }
