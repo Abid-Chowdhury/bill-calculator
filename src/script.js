@@ -30,23 +30,27 @@ twenty_Tip.onclick = function () {
 }
 
 // SUMMARY
+var food_Price = document.getElementById('food-price')
+var drink_Price = document.getElementById('drink-price')
+var dessert_Price = document.getElementById('dessert-price')
+
 function update_Summary() {
-    if (document.getElementById('food-price').value == '') {
+    if (food_Price.value == '') {
         document.getElementById('food-price-label').textContent = '$0'
     } else {
-        document.getElementById('food-price-label').textContent = "$" + document.getElementById('food-price').value
+        document.getElementById('food-price-label').textContent = "$" + food_Price.value
     }
 
-    if (document.getElementById('drink-price').value == '') {
+    if (drink_Price.value == '') {
         document.getElementById('drink-price-label').textContent = '$0'
     } else {
-        document.getElementById('drink-price-label').textContent = "$" + document.getElementById('drink-price').value
+        document.getElementById('drink-price-label').textContent = "$" + drink_Price.value
     }
 
-    if (document.getElementById('dessert-price').value == '') {
+    if (dessert_Price.value == '') {
         document.getElementById('dessert-price-label').textContent = '$0'
     } else {
-        document.getElementById('dessert-price-label').textContent = "$" + document.getElementById('dessert-price').value
+        document.getElementById('dessert-price-label').textContent = "$" + dessert_Price.value
     }
     // if (document.getElementById('food-price').value == '') {
     //     document.getElementById('food-price-label').textContent = '$0'
@@ -60,6 +64,12 @@ function update_Summary() {
 }
 
 // SUBMIT/CLEAR BUTTON
+function reset_Values() {
+    food_Price.value = '0';
+    drink_Price.value = '0';
+    dessert_Price.value = '0';
+}
+
 function hide_Summary() { 
     document.getElementById('is-hidden').style.display = 'none'
 }
@@ -70,6 +80,7 @@ function unhide_Summary() {
 
 document.getElementById('clear').onclick = function () {
     hide_Summary()
+    reset_Values()
 }
 
 document.getElementById('submit').onclick = function () {
