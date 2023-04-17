@@ -39,7 +39,7 @@ var food_Price = document.getElementById('food-price')
 var drink_Price = document.getElementById('drink-price')
 var dessert_Price = document.getElementById('dessert-price')
 
-function update_Summary() {    
+function update_Summary() {
     // food
     if (food_Price.value == '') {
         document.getElementById('food-price-label').textContent = '$0'
@@ -62,21 +62,30 @@ function update_Summary() {
         document.getElementById('dessert-price-label').textContent = "$" + dessert_Price.value
     }
     // tax
-    var tax = (parseInt(food_Price.value) + parseInt(drink_Price.value) + parseInt(dessert_Price.value)) * .10
+    var tax = (parseFloat(food_Price.value) + parseFloat(drink_Price.value) + parseFloat(dessert_Price.value)) * .10
+    if (tax % 1 != 0) {
+        tax = tax.toFixed(2)
+    }
     if (isNaN(tax)) {
         document.getElementById('tax-price-label').textContent = "$0"
     } else {
         document.getElementById('tax-price-label').textContent = "$" + tax
     }
     // tip
-    var total_Tip = (parseInt(food_Price.value) + parseInt(drink_Price.value) + parseInt(dessert_Price.value)) * tip_Percentage
+    var total_Tip = (parseFloat(food_Price.value) + parseFloat(drink_Price.value) + parseFloat(dessert_Price.value)) * tip_Percentage
+    if (total_Tip % 1 != 0) {
+        total_Tip = total_Tip.toFixed(2)
+    }
     if (isNaN(total_Tip)) {
         document.getElementById('tip-price-label').textContent = "$0"
     } else {
         document.getElementById('tip-price-label').textContent = "$" + total_Tip
     }
     // total
-    var total_Price = (parseInt(food_Price.value) + parseInt(drink_Price.value) + parseInt(dessert_Price.value)) + parseInt(tax) + parseInt(total_Tip)
+    var total_Price = (parseFloat(food_Price.value) + parseFloat(drink_Price.value) + parseFloat(dessert_Price.value)) + parseFloat(tax) + parseFloat(total_Tip)
+    if (total_Price % 1 != 0) {
+        total_Price = total_Price.toFixed(2)
+    }
     if (isNaN(total_Price)) {
         document.getElementById('total-price-label').textContent = "$0"
     } else {
