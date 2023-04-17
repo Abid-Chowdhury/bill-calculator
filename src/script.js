@@ -1,4 +1,6 @@
 // TIP BUTTONS
+var tip_Percentage = .10
+
 var ten_Tip = document.getElementById('ten-tip-container')
 var fifteen_Tip = document.getElementById('fifteen-tip-container')
 var twenty_Tip = document.getElementById('twenty-tip-container')
@@ -8,22 +10,25 @@ function active_tip(element) {
 }
 
 function unactive_tip(element) {
-    element.classList.remove('active');
+    element.classList.remove('active')
 }
 
 ten_Tip.onclick = function () {
+    tip_Percentage = .10
     active_tip(ten_Tip)
     unactive_tip(fifteen_Tip)
     unactive_tip(twenty_Tip)
 }
 
 fifteen_Tip.onclick = function () {
+    tip_Percentage = .15
     unactive_tip(ten_Tip)
     active_tip(fifteen_Tip)
     unactive_tip(twenty_Tip)
 }
 
 twenty_Tip.onclick = function () {
+    tip_Percentage = .20
     unactive_tip(ten_Tip)
     unactive_tip(fifteen_Tip)
     active_tip(twenty_Tip)
@@ -34,40 +39,49 @@ var food_Price = document.getElementById('food-price')
 var drink_Price = document.getElementById('drink-price')
 var dessert_Price = document.getElementById('dessert-price')
 
-function update_Summary() {
+function update_Summary() {    
+    // food
     if (food_Price.value == '') {
         document.getElementById('food-price-label').textContent = '$0'
     } else {
         document.getElementById('food-price-label').textContent = "$" + food_Price.value
     }
-
+    // drink
     if (drink_Price.value == '') {
         document.getElementById('drink-price-label').textContent = '$0'
     } else {
         document.getElementById('drink-price-label').textContent = "$" + drink_Price.value
     }
-
+    // dessert
     if (dessert_Price.value == '') {
         document.getElementById('dessert-price-label').textContent = '$0'
     } else {
         document.getElementById('dessert-price-label').textContent = "$" + dessert_Price.value
     }
-    // if (document.getElementById('food-price').value == '') {
-    //     document.getElementById('food-price-label').textContent = '$0'
-    // } else {
-    //     document.getElementById('food-price-label').textContent = "$" + document.getElementById('food-price').value
-    // }    if (document.getElementById('food-price').value == '') {
-    //     document.getElementById('food-price-label').textContent = '$0'
-    // } else {
-    //     document.getElementById('food-price-label').textContent = "$" + document.getElementById('food-price').value
-    // }
+    // tax
+    var tax = (parseInt(food_Price.value) + parseInt(drink_Price.value) + parseInt(dessert_Price.value)) * .10
+    if (isNaN(tax)) {
+        document.getElementById('tax-price-label').textContent = "$0"
+    } else {
+        document.getElementById('tax-price-label').textContent = "$" + tax
+    }
+    // tip
+    var total_Tip = (parseInt(food_Price.value) + parseInt(drink_Price.value) + parseInt(dessert_Price.value)) * tip_Percentage
+    if (isNaN(total_Tip)) {
+        document.getElementById('tip-price-label').textContent = "$0"
+    } else {
+        document.getElementById('tip-price-label').textContent = "$" + total_Tip
+    }
+    // total
+
+
 }
 
 // SUBMIT/CLEAR BUTTON
 function reset_Values() {
-    food_Price.value = '0';
-    drink_Price.value = '0';
-    dessert_Price.value = '0';
+    food_Price.value = '';
+    drink_Price.value = '';
+    dessert_Price.value = '';
 }
 
 function hide_Summary() { 

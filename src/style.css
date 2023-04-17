@@ -58,6 +58,11 @@ h1 {
     background: var(--background);
 }
 
+.price-wrapper::-webkit-outer-spin-button,
+.price-wrapper::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
 .item-container::before {
     z-index: 1;
     content: "$";

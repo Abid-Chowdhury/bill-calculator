@@ -16,15 +16,15 @@
         <div class="items-container">
             <div class="item-container" id="food-label">
                 <p class="item-label">Food</p>
-                <input class="price-wrapper" id="food-price" placeholder="0"></input>
+                <input type="number" class="price-wrapper" id="food-price" placeholder="0"></input>
             </div>
             <div class="item-container" id="drink-label">
                 <p class="item-label">Drink</p>
-                <input class="price-wrapper" id='drink-price' placeholder="0"></input>
+                <input type="number" class="price-wrapper" id='drink-price' placeholder="0"></input>
             </div>
             <div class="item-container" id="dessert">
                 <p class="item-label">Dessert</p>
-                <input class="price-wrapper" id='dessert-price' placeholder="0"></input>
+                <input type="number" class="price-wrapper" id='dessert-price' placeholder="0"></input>
             </div>
         </div>
 
@@ -32,14 +32,14 @@
             <p class="item-label">Tip</p>
 
             <div class="tip-percentage-container">
-                <button class="active" id="ten-tip-container">
-                    <p class="tip-percentage-label" id="ten">10%</p>
+                <button class="active" id="ten-tip-container" value>
+                    <p class="tip-percentage-label" id="">10%</p>
                 </button>
                 <button class="" id="fifteen-tip-container">
-                    <p class="tip-percentage-label" id="fifteen">15%</p>
+                    <p class="tip-percentage-label" id="">15%</p>
                 </button>
                 <button class="" id="twenty-tip-container">
-                    <p class="tip-percentage-label" id="twenty">20%</p>
+                    <p class="tip-percentage-label" id="">20%</p>
                 </button>
             </div>
         </div>
@@ -63,11 +63,11 @@
                     </div>
                     <div class="price-container" id="tax">
                         <p class="item-name-label">Tax</p>
-                        <p class="item-price-label">$0</p>
+                        <p class="item-price-label" id="tax-price-label">$0</p>
                     </div>
                     <div class="price-container" id="tip">
                         <p class="item-name-label">Tip</p>
-                        <p class="item-price-label">$0</p>
+                        <p class="item-price-label" id="tip-price-label">$0</p>
                     </div>
                 </div>
 
