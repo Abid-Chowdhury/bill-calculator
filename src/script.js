@@ -39,37 +39,47 @@ var food_Price = document.getElementById('food-price')
 var drink_Price = document.getElementById('drink-price')
 var dessert_Price = document.getElementById('dessert-price')
 
+var food_Price_Label = document.getElementById('food-price-label')
+var drink_Price_Label = document.getElementById('drink-price-label')
+var dessert_Price_Label = document.getElementById('dessert-price-label')
+var tax_Price_label = document.getElementById('tax-price-label')
+var tip_Price_Label = document.getElementById('tip-price-label')
+var total_Price_Label = document.getElementById('total-price-label')
+
 function update_Summary() {
     // food
     if (food_Price.value == '') {
-        document.getElementById('food-price-label').textContent = '$0'
+        food_Price_Label.textContent = '$0'
         food_Price.value = 0
     } else {
-        document.getElementById('food-price-label').textContent = "$" + food_Price.value
+        food_Price_Label.textContent = "$" + food_Price.value
     }
+
     // drink
     if (drink_Price.value == '') {
-        document.getElementById('drink-price-label').textContent = '$0'
+        drink_Price_Label.textContent = '$0'
         drink_Price.value = 0
     } else {
-        document.getElementById('drink-price-label').textContent = "$" + drink_Price.value
+        drink_Price_Label.textContent = "$" + drink_Price.value
     }
+
     // dessert
     if (dessert_Price.value == '') {
-        document.getElementById('dessert-price-label').textContent = '$0'
+        dessert_Price_Label.textContent = '$0'
         dessert_Price.value = 0
     } else {
-        document.getElementById('dessert-price-label').textContent = "$" + dessert_Price.value
+        dessert_Price_Label.textContent = "$" + dessert_Price.value
     }
+
     // tax
     var tax = (parseFloat(food_Price.value) + parseFloat(drink_Price.value) + parseFloat(dessert_Price.value)) * .10
     if (tax % 1 != 0) {
         tax = tax.toFixed(2)
     }
     if (isNaN(tax)) {
-        document.getElementById('tax-price-label').textContent = "$0"
+        tax_Price_label.textContent = "$0"
     } else {
-        document.getElementById('tax-price-label').textContent = "$" + tax
+        tax_Price_label.textContent = "$" + tax
     }
     // tip
     var total_Tip = (parseFloat(food_Price.value) + parseFloat(drink_Price.value) + parseFloat(dessert_Price.value)) * tip_Percentage
@@ -77,9 +87,9 @@ function update_Summary() {
         total_Tip = total_Tip.toFixed(2)
     }
     if (isNaN(total_Tip)) {
-        document.getElementById('tip-price-label').textContent = "$0"
+        tip_Price_Label.textContent = "$0"
     } else {
-        document.getElementById('tip-price-label').textContent = "$" + total_Tip
+        tip_Price_Label.textContent = "$" + total_Tip
     }
     // total
     var total_Price = (parseFloat(food_Price.value) + parseFloat(drink_Price.value) + parseFloat(dessert_Price.value)) + parseFloat(tax) + parseFloat(total_Tip)
@@ -87,13 +97,17 @@ function update_Summary() {
         total_Price = total_Price.toFixed(2)
     }
     if (isNaN(total_Price)) {
-        document.getElementById('total-price-label').textContent = "$0"
+        total_Price_Label.textContent = "$0"
     } else {
-        document.getElementById('total-price-label').textContent = "$" + total_Price
+        total_Price_Label.textContent = "$" + total_Price
     }
 }
 
 // SUBMIT/CLEAR BUTTON
+var is_Hidden_Element = document.getElementById('is-hidden')
+var submit_Button = document.getElementById('submit')
+var clear_Button = document.getElementById('clear')
+
 function reset_Values() {
     food_Price.value = '';
     drink_Price.value = '';
@@ -101,19 +115,19 @@ function reset_Values() {
 }
 
 function hide_Summary() { 
-    document.getElementById('is-hidden').style.display = 'none'
+    is_Hidden_Element.style.display = 'none'
 }
 
 function unhide_Summary() {
-    document.getElementById('is-hidden').style.display = 'block'
+    is_Hidden_Element.style.display = 'block'
 }
 
-document.getElementById('clear').onclick = function () {
+clear_Button.onclick = function () {
     hide_Summary()
     reset_Values()
 }
 
-document.getElementById('submit').onclick = function () {
+submit_Button.onclick = function () {
     update_Summary()
     unhide_Summary()
 }
