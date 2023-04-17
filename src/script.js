@@ -43,18 +43,21 @@ function update_Summary() {
     // food
     if (food_Price.value == '') {
         document.getElementById('food-price-label').textContent = '$0'
+        food_Price.value = 0
     } else {
         document.getElementById('food-price-label').textContent = "$" + food_Price.value
     }
     // drink
     if (drink_Price.value == '') {
         document.getElementById('drink-price-label').textContent = '$0'
+        drink_Price.value = 0
     } else {
         document.getElementById('drink-price-label').textContent = "$" + drink_Price.value
     }
     // dessert
     if (dessert_Price.value == '') {
         document.getElementById('dessert-price-label').textContent = '$0'
+        dessert_Price.value = 0
     } else {
         document.getElementById('dessert-price-label').textContent = "$" + dessert_Price.value
     }
@@ -73,8 +76,12 @@ function update_Summary() {
         document.getElementById('tip-price-label').textContent = "$" + total_Tip
     }
     // total
-
-
+    var total_Price = (parseInt(food_Price.value) + parseInt(drink_Price.value) + parseInt(dessert_Price.value)) + parseInt(tax) + parseInt(total_Tip)
+    if (isNaN(total_Price)) {
+        document.getElementById('total-price-label').textContent = "$0"
+    } else {
+        document.getElementById('total-price-label').textContent = "$" + total_Price
+    }
 }
 
 // SUBMIT/CLEAR BUTTON
