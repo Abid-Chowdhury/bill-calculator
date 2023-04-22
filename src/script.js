@@ -1,4 +1,4 @@
-// TIP BUTTONS
+// TIP BUTTONS (changes bg color of selected tip amount)
 var tip_Percentage = .10
 
 var ten_Tip = document.getElementById('ten-tip-container')
@@ -73,29 +73,40 @@ function update_Summary() {
 
     // tax
     var tax = (parseFloat(food_Price.value) + parseFloat(drink_Price.value) + parseFloat(dessert_Price.value)) * .10
+    
+    // adds 2 decimal places if needed
     if (tax % 1 != 0) {
         tax = tax.toFixed(2)
     }
+
     if (isNaN(tax)) {
         tax_Price_label.textContent = "$0"
     } else {
         tax_Price_label.textContent = "$" + tax
     }
+
     // tip
     var total_Tip = (parseFloat(food_Price.value) + parseFloat(drink_Price.value) + parseFloat(dessert_Price.value)) * tip_Percentage
+    
+    // adds 2 decimal places if needed
     if (total_Tip % 1 != 0) {
         total_Tip = total_Tip.toFixed(2)
     }
+
     if (isNaN(total_Tip)) {
         tip_Price_Label.textContent = "$0"
     } else {
         tip_Price_Label.textContent = "$" + total_Tip
     }
+
     // total
     var total_Price = (parseFloat(food_Price.value) + parseFloat(drink_Price.value) + parseFloat(dessert_Price.value)) + parseFloat(tax) + parseFloat(total_Tip)
+    
+    // adds 2 decimal places if needed
     if (total_Price % 1 != 0) {
         total_Price = total_Price.toFixed(2)
     }
+    
     if (isNaN(total_Price)) {
         total_Price_Label.textContent = "$0"
     } else {
