@@ -48,3 +48,15 @@
 .splitter-actions-container button p {
     margin: 0;
 }
+
+@media only screen and (max-width: 420px) {
+    .calculator-container {
+        margin-top: 500px;
+    }
+  
+    .splitter-container {
+    margin-left: 0;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}

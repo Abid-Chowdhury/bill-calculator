@@ -11,7 +11,7 @@
 
 body {
     background: var(--backdrop);
-    font-family:var(--font);
+    font-family: var(--font);
     display: flex;
     flex-direction: row;
 }
@@ -238,4 +238,11 @@ h1 {
 
 .actions-container button p {
     margin: 0;
+}
+
+@media only screen and (max-width: 420px) {
+  .parent-container {
+    flex-direction: column;
+  }
+
 }
