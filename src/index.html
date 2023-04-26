@@ -99,54 +99,32 @@
             <div class="items-container">
                 <div class="item-container" id="total-bill-label">
                     <p class="item-label">Total bill</p>
-                    <input type="number" class="price-wrapper" id="food-price" placeholder="0"></input>
+                    <input type="number" class="price-wrapper" id="splitter-total-bill" placeholder="0"></input>
                 </div>
                 <div class="item-container" id="people-label">
                     <p class="item-label">People</p>
-                    <input type="number" class="price-wrapper" id='drink-price' placeholder="0"></input>
+                    <input type="number" class="price-wrapper" id='splitter-people' placeholder="0"></input>
                 </div>
             </div>
 
-
-            <div class="summary-container" id="is-hidden">
-                <p class="summary-label">SUMMARY</p>
+            <div class="summary-container" id="splitter-is-hidden">
+                <p class="result-label">RESULT</p>
 
                 <div class="prices-container">
                     <div class="item-prices-container">
-                        <div class="price-container" id="food">
-                            <p class="item-name-label">Food</p>
-                            <p class="item-price-label" id="food-price-label">$0</p>
+                        <div class="price-container" id="per-person">
+                            <p class="item-name-label">Per person</p>
+                            <p class="item-price-label" id="per-person-label">$0</p>
                         </div>
-                        <div class="price-container" id="drink">
-                            <p class="item-name-label">Drink</p>
-                            <p class="item-price-label" id="drink-price-label">$0</p>
-                        </div>
-                        <div class="price-container" id="dessert">
-                            <p class="item-name-label">Dessert</p>
-                            <p class="item-price-label" id="dessert-price-label">$0</p>
-                        </div>
-                        <div class="price-container" id="tax">
-                            <p class="item-name-label">Tax</p>
-                            <p class="item-price-label" id="tax-price-label">$0</p>
-                        </div>
-                        <div class="price-container" id="tip">
-                            <p class="item-name-label">Tip</p>
-                            <p class="item-price-label" id="tip-price-label">$0</p>
-                        </div>
-                    </div>
-
-                    <div class="total-price-container">
-                        <p class="total-name-label">TOTAL</p>
-                        <p class="total-price-label" id="total-price-label">$0</p>
                     </div>
                 </div>
             </div>
 
-            <div class="actions-container">
-                <button class="action-button-wrapper" id="clear">
+            <div class="splitter-actions-container">
+                <button class="action-button-wrapper" id="splitter-clear">
                     <p class="action-button-text">Clear</p>
                 </button>
-                <button class="action-button-wrapper" id="submit">
+                <button class="action-button-wrapper" id="splitter-submit">
                     <p class="action-button-text">Sumbit</p>
                 </button>
             </div>
@@ -155,6 +133,7 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="splitter_Script.js"></script>
 
 </body>
 </html>
