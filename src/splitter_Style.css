@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700&display=swap');
+/* font-family: 'Kanit', sans-serif; */
+
+:root {
+    --font: 'Kanit', sans-serif;
+    --backdrop: #333333;
+    --background: #F1E3F3;
+    --foreground: #C2BBF0;
+    --accent: #8FB8ED;
+}
+
+.splitter-container {
+    position: relative;
+    width: 360px;
+    height: 640px;
+    background: var(--foreground);
+    border-radius: 15px;
+    margin-left: 45px;
+}
+
+#result-label {
+    left: 125px;
+}
+
+.splitter-actions-container {
+    position: absolute;
+    width: 330px;
+    left: 15px;
+    top: 560px;
+}
+
+.splitter-actions-container button {
+    height: 65px;
+    width: 150px;
+    border-radius: 10px;
+    border: none;
+    font-family: var(--font);
+    font-weight: 600;
+    font-size: 25px;
+    background: var(--background);
+}
+
+#splitter-submit {
+    position: relative;
+    left: 25px;
+}
+
+.splitter-actions-container button p {
+    margin: 0;
+}
